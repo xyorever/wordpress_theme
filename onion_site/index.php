@@ -84,7 +84,7 @@ while ( $loopt->have_posts() ) : $loopt->the_post();
 // echo contents in projects
  while ( $loopp->have_posts() ) : $loopp->the_post(); ?>
 <div id="tutorials">	
-<span> Projects: </span>
+<span> Project: </span>
 <span id="ttitle"> <?php the_title( sprintf( '<a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' ); ?> </span> 
 <span id="ttime"> Posted on <?php the_time('F jS, Y') ?></span>
 </br>
