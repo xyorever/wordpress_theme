@@ -18,6 +18,8 @@ get_header(); ?>
 			// Include the single post content template.
 			get_template_part( 'template-parts/content', 'single' );
 
+
+			the_terms( $post->ID, 'related-product', 'Related Product: ', ' / ' );
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) {
 				comments_template();
@@ -46,7 +48,8 @@ get_header(); ?>
 
 	</main><!-- .site-main -->
 
-	<?php get_sidebar( 'content-bottom' ); ?>
+	<?php
+	 get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
 

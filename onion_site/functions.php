@@ -136,27 +136,6 @@ function product_init() {
 add_action( 'init', 'product_init' );
 
 
-
-
-//custom metabox
-//add_meta_box ( 'related-product', string 'Related Product', callable $callback, null , string $context = 'advanced', string $priority = 'default', array $callback_args = null );
-/**
- * Register meta box(es).
- */
-function wpdocs_register_meta_boxes() {
-    add_meta_box( 'related-product', __( 'Related Product', 'textdomain' ), 'wpdocs_my_display_callback', 'post' );
-}
-add_action( 'add_meta_boxes', 'wpdocs_register_meta_boxes' );
- 
-/**
- * Meta box display callback.
- *
- * @param WP_Post $post Current post object.
- */
-function wpdocs_my_display_callback( $post ) {
-    // Display code/markup goes here. Don't forget to include nonces!
-}
- 
 /**
  * Save meta box content.
  *

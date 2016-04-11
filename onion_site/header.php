@@ -2,6 +2,13 @@
 <head>
 <title>Onion Site</title>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+<div id = "login">
+<?php  if(!is_user_logged_in ()): ?>
+ 	<a href=  "wp-login.php" > login </a> 
+ <?php else: ?>
+ 	<a href= 'wp-admin' >go to site </a> | <a href = '<?php echo wp_logout_url( home_url() ); ?>'> logout </a>
+<?php endif; ?>
+</div>
 </head>
 <body>
 <div id="wrapper">

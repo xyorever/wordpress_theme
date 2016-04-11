@@ -5,6 +5,12 @@
 img {
 	max-width: 100%;
 }
+
+html {
+	background-image: url("http://pic.pptbz.com/pptpic/201105/2011051707531622.jpg");
+	background-size: cover;
+}
+
 #wrapper { display: block; border: 1px #a2a2a2 solid; width:90%; margin:0px auto; }
 #header { border: 2px #a2a2a2 solid; /*position: fixed;*/ }
 #logo {width: 5%; height:10%; float: right; overflow: auto; margin-top: -80px; margin-right: 700px;}

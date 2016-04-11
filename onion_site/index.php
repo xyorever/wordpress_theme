@@ -1,5 +1,6 @@
-
+<?php require (dirname(__FILE__) . '/product-redirection.php') ?>
 <?php 
+
 get_header(); 
 
 ?>
@@ -54,19 +55,6 @@ $loopp = new WP_Query( $argsp );
 <span id="tauther"> by <?php the_author(); ?> </span> <?php the_terms( $post->ID, 'related-product', 'Related Product: ', ' / ' ); ?>
 </div>
 <?php endif;} ?>
-
-<?php 
-// product redirection
-if(isset($_GET['related-product'])&&$_GET['related-product']=="omega"){  
-	wp_redirect("https://store.onion.io/products/omega-dock"); 
-}
-
-if(isset($_GET['related-product'])&&$_GET['related-product']=="expansion"){  
-	wp_redirect("https://store.onion.io/collections/onion-omega-expansions/products/the-dock"); 
-}
-
- ?>
-
 
 <?php endwhile; elseif( $loopt->have_posts() || $loopt->have_posts() ): 
 // echo contents in tutorial
