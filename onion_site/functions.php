@@ -26,8 +26,22 @@
  */
 //test area
 
-
 //end of test
+
+// custom roles for users
+
+add_role( "super_author", __( 'Super Author' ), array (
+		'read'					=> true,
+		'edit_posts'			=> true,
+		'delete_posts'			=> true,
+		'delete_published_posts'=> true,
+		'publish_posts'			=> true,
+		'upload_files'			=> true,
+		'edit_published_posts'	=> true,
+		'edit_others_posts'		=> true,
+	) 
+);
+
 
 // Custom post type
 function tutorial_init() {
@@ -62,7 +76,7 @@ function tutorial_init() {
     'has_archive' => true, 
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions' )
   ); 
   register_post_type('tutorial',$args);//
 }
@@ -100,7 +114,7 @@ function project_init() {
     'has_archive' => true, 
     'hierarchical' => false,
     'menu_position' => null,
-    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions' )
   ); 
   register_post_type('project',$args);//
 }
