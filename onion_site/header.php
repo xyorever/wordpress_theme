@@ -7,9 +7,12 @@
  	<a href=  "wp-login.php" > login </a> 
  <?php else: ?>
 
- 	<?php global $current_user;
- 	get_current_user();
- 	echo 'Username:' . $current_user->display_name;
+ 	<?php global $current_user;  get_current_user();
+ 	    if ( ($current_user instanceof WP_User) ) {
+ 	    	echo get_avatar( $current_user->user_email, 24 );
+        	echo 'Welcome : ' . $current_user->display_name ;
+
+        }
  	 ?>
  	  <a href= 'wp-admin' >go to site </a> | <a href = '<?php echo wp_logout_url( home_url() ); ?>'> logout </a>
 <?php endif; ?>
