@@ -6,7 +6,12 @@
 <?php  if(!is_user_logged_in ()): ?>
  	<a href=  "wp-login.php" > login </a> 
  <?php else: ?>
- 	<a href= 'wp-admin' >go to site </a> | <a href = '<?php echo wp_logout_url( home_url() ); ?>'> logout </a>
+
+ 	<?php global $current_user;
+ 	get_current_user();
+ 	echo 'Username:' . $current_user->display_name;
+ 	 ?>
+ 	  <a href= 'wp-admin' >go to site </a> | <a href = '<?php echo wp_logout_url( home_url() ); ?>'> logout </a>
 <?php endif; ?>
 </div>
 </head>
